@@ -26,7 +26,7 @@ setInterval(() => {
       if (!err) {
         if (rows.length > 0) {
           rows.forEach(element => {
-			  //writes to file 
+            //writes to file
             fs.appendFile(
               'logs.txt',
               `Time logged:${currentDate()}. Drone serial Number:${
@@ -47,7 +47,7 @@ setInterval(() => {
       }
     }
   )
-}, 1000)
+}, 10000)
 
 const PORT = process.env.PORT || 8080
 
