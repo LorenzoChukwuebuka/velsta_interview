@@ -8,7 +8,7 @@ const createDrone = (req, res) => {
   let serial_number = sanitize(req.body.sNum)
   let model = sanitize(req.body.model)
   let weight_limit = 500
-  let batteryCap = sanitize(req.body.batteryCap)
+  let batteryCap = sanitize(req.body.batteryCap) 
   let state = 'IDLE'
 
   if (serial_number && model && batteryCap) {
@@ -131,7 +131,7 @@ const getSingleDrone = (req, res) => {
 const getDronesBattery = (req, res) => {
   let id = req.params.id
   db.query(
-    'SELECT battery_percent FROM drone WHERE id =?',
+    'SELECT serial_number,battery_percent FROM drone WHERE id =?',
     [id],
     (err, rows) => {
       if (!err) {
